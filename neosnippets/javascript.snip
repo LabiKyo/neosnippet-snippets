@@ -10,17 +10,16 @@ options word
     ${0:TARGET}
   });
 
+snippet (o)
+options word
+  ({
+    ${0:TARGET}
+  })${1:;}
+
 snippet function
 abbr    func
 options word
   function ${1:#:function_name}(${2:#:argument}) {
-    ${0:TARGET}
-  }
-
-snippet function2
-abbr    func2
-options head
-  function ${1:function_name}(${2:argument}) {
     ${0:TARGET}
   }
 
