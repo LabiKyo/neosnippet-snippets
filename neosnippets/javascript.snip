@@ -1,3 +1,9 @@
+snippet f
+options word
+  function(${1:#:attribute}) {
+    ${0:TARGET}
+  }${2:;}
+
 snippet :f
 options head
   ${1:#:method_name}: function(${2:#:attribute}) {
@@ -10,6 +16,19 @@ options word
     ${0:TARGET}
   });
 
+snippet (ff)
+options word
+  (function(${1:#:attribute}) {
+    ${0:TARGET}
+  }, function(${2:#:attribute}) {
+  });
+
+snippet o
+options word
+  {
+    ${0:TARGET}
+  }${1:;}
+
 snippet :o
 options head
   ${1:#:method_name}: {
@@ -20,18 +39,7 @@ snippet (o)
 options word
   ({
     ${0:TARGET}
-  })${1:;}
-
-
-snippet o
-options word
-  {
-    ${0:TARGET}
-  }${1:;}
-
-snippet :
-options word
-  ${1:key}: ${0:value},
+  });
 
 snippet function
 abbr    func
@@ -45,13 +53,6 @@ options head
   ${1:#:class_name}.prototype.${2:#:method_name} = function(${3:#:first_argument}) {
     ${0:TARGET}
   };
-
-
-snippet f
-options word
-  function(${1}) {
-    ${0:TARGET}
-  }${2:;}
 
 snippet if
 options head
@@ -80,22 +81,31 @@ options head
   }
 
 snippet key-value
-abbr :,
+abbr :
 options word
-  ${1:#:value_name}: ${0:#:value},
+  ${1:#:key}: ${0:#:value},
 
 #snippet key
 #options word
 #  ${1:#:key}: "${2:#:value}"}${3:, }
 
 snippet setTimeout-function
+abbr setTo
 options head
-  setTimeout(function() { ${0} }, ${1:10});
+  setTimeout(function() {
+    ${0}
+  }, ${1:10});
 
 snippet console-log
 alias cl
 options head
   console.log(${0:TARGET});
+
+snippet console-log'
+alias cl'
+options head
+  console.log('${0:TARGET}');
+  asdfff
 
 snippet extend
 alias ext
