@@ -10,9 +10,10 @@ options head
     ${0:TARGET}
   },
 
-snippet (f)
+snippet f);
+alias f)
 options word
-  (function(${1:#:attribute}) {
+  function(${1:#:attribute}) {
     ${0:TARGET}
   });
 
@@ -42,7 +43,7 @@ options word
   });
 
 snippet function
-abbr    func
+alias   func
 options word
   function ${1:#:function_name}(${2:#:argument}) {
     ${0:TARGET}
@@ -61,7 +62,7 @@ options head
   }
 
 snippet if-else
-abbr ife
+alias ife
 options head
   if (${1:#:condition}) {
     ${0:TARGET}
@@ -81,7 +82,7 @@ options head
   }
 
 snippet key-value
-abbr :
+alias :
 options word
   ${1:#:key}: ${0:#:value},
 
@@ -90,7 +91,7 @@ options word
 #  ${1:#:key}: "${2:#:value}"}${3:, }
 
 snippet setTimeout-function
-abbr setTo
+alias setTo
 options head
   setTimeout(function() {
     ${0}
