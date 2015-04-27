@@ -13,7 +13,7 @@ options head
 snippet of
 abbr object function
 options head
-  ${1:#:method_name} (${2:#:attribute}) {
+  ${1:#:method_name}(${2:#:attribute}) {
     ${0:TARGET}
   },
 
@@ -73,13 +73,13 @@ options word
 snippet function
 alias   func
 options word
-  function $1(${2:#:argument}) {
+  function ${1:function_name}(${2:#:arguments}) {
     ${0:TARGET}
   }
 
 snippet proto
 options head
-  ${1:#:class_name}.prototype.${2:#:method_name} = function(${3:#:first_argument}) {
+  ${1:#:class_name}.prototype.${2:#:method_name} = function(${3:#:arguments}) {
     ${0:TARGET}
   };
 
@@ -146,3 +146,30 @@ options head
   extend({
     ${0:TARGET}
   });
+
+snippet class
+options head
+  class ${1:class_name} {
+    constructor(${2:#:arguments}) {
+      ${0:TARGET}
+    }
+  }
+
+snippet classextend
+options head
+  class ${1:class_name} extends ${2:base_class} {
+    constructor(${3:#:arguments}) {
+      ${0:TARGET}
+    }
+  }
+
+snippet react-class
+alias rc
+options head
+  class ${1:class_name} extends ${2:React.Component} {
+    constructor(${3:#:arguments}) {
+      ${0:TARGET}
+    }
+    render() {
+    }
+  }
