@@ -1,19 +1,32 @@
 snippet f
 options word
-  function ${1:#:function_name}(${2:#:attribute}) {
+  function(${1:#:attribute}) {
     ${0:TARGET}
-  }${3:;}
+  }${2:;}
+
+snippet =>
+options word
+  (${1:#:args}) => {
+    ${0:TARGET}
+  }
+
+snippet =>);
+alias =>)
+options word
+  (${1:#:args}) => {
+    ${0:TARGET}
+  });
 
 snippet :f
 options head
-  ${1:#:method_name}: function $1(${2:#:attribute}) {
+  ${1:method_name}: function(${2:#:attribute}) {
     ${0:TARGET}
   },
 
 snippet of
 abbr object function
 options head
-  ${1:#:method_name}(${2:#:attribute}) {
+  ${1:method_name}(${2:#:attribute}) {
     ${0:TARGET}
   },
 
@@ -27,16 +40,16 @@ options head
 snippet f);
 alias f)
 options word
-  function ${1:#:function_name}(${2:#:attribute}) {
+  function(${1:#:attribute}) {
     ${0:TARGET}
   });
 
 snippet ff);
 alias ff)
 options word
-  function ${1:thenResolve:then_resolve_name}(${2:#:attribute}) {
+  function(${1:#:attribute}) {
     ${0:TARGET}
-  }, function ${3:thenReject:then_reject_name}(${4:#:attribute}) {
+  }, function(${2:#:attribute}) {
   });
 
 snippet o
@@ -47,7 +60,7 @@ options word
 
 snippet :o
 options head
-  ${1:#:method_name}: {
+  ${1:method_name}: {
     ${0:TARGET}
   },
 
@@ -66,7 +79,7 @@ options word
 
 snippet :a
 options head
-  ${1:#:method_name}: [
+  ${1:method_name}: [
     ${0:TARGET}
   ],
 
@@ -86,7 +99,7 @@ options word
 
 snippet proto
 options head
-  ${1:#:class_name}.prototype.${2:#:method_name} = function(${3:#:arguments}) {
+  ${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
     ${0:TARGET}
   };
 
@@ -99,7 +112,7 @@ options head
 snippet if-else
 alias ife
 options head
-  if (${1:#:condition}) {
+  if (${1:true}) {
     ${0:TARGET}
   } else {
   }
@@ -119,7 +132,7 @@ options head
 snippet key-value
 alias :
 options word
-  ${1:#:key}: ${0:#:value},
+  ${1:key}: ${0:value},
 
 #snippet key
 #options word
@@ -155,7 +168,7 @@ options head
   });
 
 snippet class
-options head
+options word
   class ${1:class_name} {
     constructor(${2:#:arguments}) {
       ${0:TARGET}
@@ -163,7 +176,7 @@ options head
   }
 
 snippet classextend
-options head
+options word
   class ${1:class_name} extends ${2:base_class} {
     constructor(${3:#:arguments}) {
       ${0:TARGET}
@@ -173,10 +186,28 @@ options head
 snippet react-class
 alias rc
 options head
-  class ${1:class_name} extends ${2:React.Component} {
-    constructor(${3:#:arguments}) {
-      ${0:TARGET}
+  export default class ${1:class_name} extends React.Component {
+    constructor(props) {
+      super(props);
     }
     render() {
+      ${0:TARGET}
     }
   }
+
+snippet react-class-extend
+alias rce
+options head
+  class ${1:class_name} extends ${2:React.Component} {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      ${0:TARGET}
+    }
+  }
+
+snippet react-prop-types
+alias rpt
+options word
+  ${1:propName}: React.PropTypes.${0:TARGET},
