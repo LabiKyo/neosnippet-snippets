@@ -1,14 +1,17 @@
+" functions
 snippet f
 options word
   function(${1:#:attribute}) {
     ${0:TARGET}
   }${2:;}
 
-snippet import
-alias i
+snippet function
+alias   func
 options word
-  import ${1} from '${2:$1}';
-  ${0:TARGET}
+  function ${1:function_name}(${2:#:arguments}) {
+    ${0:TARGET}
+  }
+
 
 snippet =>
 options word
@@ -58,6 +61,8 @@ options word
   }, function(${2:#:attribute}) {
   });
 
+" object
+
 snippet o
 options word
   {
@@ -77,6 +82,12 @@ options word
     ${0:TARGET}
   });
 
+snippet key-value
+alias :
+options word
+  ${1:key}: ${0:value},
+
+" array
 snippet a
 options word
   [
@@ -96,13 +107,7 @@ options word
     ${0:TARGET}
   ]);
 
-snippet function
-alias   func
-options word
-  function ${1:function_name}(${2:#:arguments}) {
-    ${0:TARGET}
-  }
-
+" es5
 snippet proto
 options head
   ${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
@@ -135,15 +140,6 @@ options head
     ${0:TARGET}
   }
 
-snippet key-value
-alias :
-options word
-  ${1:key}: ${0:value},
-
-#snippet key
-#options word
-#  ${1:#:key}: "${2:#:value}"}${3:, }
-
 snippet setTimeout-function
 alias setTo
 options head
@@ -166,13 +162,7 @@ alias cl'
 options head
   console.log('${0:TARGET}');
 
-snippet extend
-alias ext
-options head
-  extend({
-    ${0:TARGET}
-  });
-
+" es6
 snippet class
 options word
   class ${1:class_name} {
@@ -213,6 +203,13 @@ options head
     }
   }
 
+snippet import
+alias i
+options word
+  import ${1} from '${2:$1}';
+  ${0:TARGET}
+
+" react
 snippet react-prop-types
 alias rpt
 options word
