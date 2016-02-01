@@ -108,6 +108,35 @@ options word
   ]);
 
 " es5
+snippet switch
+alias sw
+options word
+  switch (${1}) {
+    ${0:TARGET}
+  }
+
+snippet switchd-default
+alias sd
+options word
+  switch (${1}) {
+    ${0:TARGET}
+    default:
+      ${2:return state;}
+  }
+
+snippet case
+alias ca
+options word
+  case ${1}:
+    ${0:TARGET}
+
+snippet case-break
+alias cb
+options word
+  case ${1}:
+    ${0:TARGET}
+    break;
+
 snippet proto
 options head
   ${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
