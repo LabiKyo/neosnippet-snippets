@@ -4,6 +4,12 @@ options word
     ${0:TARGET}
   }${2:;}
 
+snippet import
+alias i
+options word
+  import ${1} from '${2:$1}';
+  ${0:TARGET}
+
 snippet =>
 options word
   (${1:#:args}) => {
