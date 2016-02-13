@@ -118,7 +118,7 @@ options word
 snippet switchd-default
 alias sd
 options word
-  switch (${1}) {
+  switch (${1:action.type}) {
     ${0:TARGET}
     default:
       ${2:return state;}
@@ -236,7 +236,6 @@ snippet import
 alias i
 options word
   import ${1} from '${2:$1}';
-  ${0:TARGET}
 
 " react
 snippet react-prop-types
