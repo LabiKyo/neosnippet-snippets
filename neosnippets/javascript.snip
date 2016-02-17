@@ -1,9 +1,8 @@
-" functions
 snippet f
 options word
   function(${1:#:attribute}) {
     ${0:TARGET}
-  }${2:;}
+  }${2:}
 
 snippet function
 alias   func
@@ -19,12 +18,12 @@ options word
     ${0:TARGET}
   }
 
-snippet =>);
+snippet =>)
 alias =>)
 options word
   (${1:#:args}) => {
     ${0:TARGET}
-  });
+  })
 
 snippet :f
 options head
@@ -46,28 +45,18 @@ options head
     ${0:TARGET}
   }
 
-snippet f);
+snippet f)
 alias f)
 options word
   function(${1:#:attribute}) {
     ${0:TARGET}
-  });
-
-snippet ff);
-alias ff)
-options word
-  function(${1:#:attribute}) {
-    ${0:TARGET}
-  }, function(${2:#:attribute}) {
-  });
-
-" object
+  })
 
 snippet o
 options word
   {
     ${0:TARGET}
-  }${1:;}
+  }${1:}
 
 snippet :o
 options head
@@ -75,24 +64,23 @@ options head
     ${0:TARGET}
   },
 
-snippet o);
+snippet o)
 alias o)
 options word
   {
     ${0:TARGET}
-  });
+  })
 
 snippet key-value
 alias :
 options word
   ${1:key}: ${0:value},
 
-" array
 snippet a
 options word
   [
     ${0:TARGET}
-  ]${1:;}
+  ]${1:}
 
 snippet :a
 options head
@@ -100,14 +88,13 @@ options head
     ${0:TARGET}
   ],
 
-snippet a);
+snippet a)
 alias a)
 options word
   [
     ${0:TARGET}
-  ]);
+  ])
 
-" es5
 snippet switch
 alias sw
 options word
@@ -121,7 +108,7 @@ options word
   switch (${1:action.type}) {
     ${0:TARGET}
     default:
-      ${2:return state;}
+      ${2:return state}
   }
 
 snippet case
@@ -135,13 +122,13 @@ alias cb
 options word
   case ${1}:
     ${0:TARGET}
-    break;
+    break
 
 snippet proto
 options head
   ${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
     ${0:TARGET}
-  };
+  }
 
 snippet if
 options head
@@ -159,7 +146,7 @@ options head
 
 snippet for
 options head
-  for (var ${1:i}=0; $1 < ${2:#:Things}.length; ++$1) {
+  for (let ${1:i} = 0; $1 < ${2:#:Things}.length; ++$1) {
     ${0:TARGET}
   }
 
@@ -174,24 +161,23 @@ alias setTo
 options head
   setTimeout(function() {
     ${0}
-  }, ${1:10});
+  }, ${1:10})
 
 snippet console-log
 alias cl
 options head
-  console.log(${0:TARGET});
+  console.log(${0:TARGET})
 
 snippet console-error
 alias ce
 options head
-  console.error(${0:TARGET});
+  console.error(${0:TARGET})
 
 snippet console-log'
 alias cl'
 options head
-  console.log('${0:TARGET}');
+  console.log('${0:TARGET}')
 
-" es6
 snippet class
 options word
   class ${1:class_name} {
@@ -213,7 +199,7 @@ alias rc
 options head
   export default class ${1:class_name} extends React.Component {
     constructor(props) {
-      super(props);
+      super(props)
     }
     render() {
       ${0:TARGET}
@@ -225,7 +211,7 @@ alias rce
 options head
   class ${1:class_name} extends ${2:React.Component} {
     constructor(props) {
-      super(props);
+      super(props)
     }
     render() {
       ${0:TARGET}
@@ -235,9 +221,19 @@ options head
 snippet import
 alias i
 options word
-  import ${1} from '${2:$1}';
+  import ${1} from '${2:$1}'
 
-" react
+snippet create-react-class
+alias crc
+options word
+  React.createClass({
+    render() {
+      return (
+        ${0:TARGET}
+      )
+    },
+  })
+
 snippet react-prop-types
 alias rpt
 options word
@@ -246,4 +242,4 @@ options word
 snippet redux-action-type
 alias rat
 options word
-  export const ${1} = '$1';
+  export const ${1} = '$1'
