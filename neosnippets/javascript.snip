@@ -219,20 +219,22 @@ options head
   }
 
 snippet import
-alias i
+alias im
 options word
   import ${1} from '${2:$1}'
 
 snippet create-react-class
 alias crc
 options word
-  React.createClass({
+  const ${1} = React.createClass({
     render() {
       return (
         ${0:TARGET}
       )
     },
   })
+
+  export default $1
 
 snippet react-prop-types
 alias rpt
