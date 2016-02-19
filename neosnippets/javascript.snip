@@ -214,9 +214,13 @@ options head
       super(props)
     }
     render() {
-      ${0:TARGET}
+      return (
+        ${0:TARGET}
+      )
     }
   }
+
+  export default $1
 
 snippet import
 alias im
@@ -239,7 +243,12 @@ options word
 snippet react-prop-types
 alias rpt
 options word
-  ${1:propName}: React.PropTypes.${0:TARGET},
+  React.PropTypes.${1:type},${0:TARGET}
+
+snippet :react-prop-types
+alias :rpt
+options word
+  ${1:propName}: React.PropTypes.${2:type},${0:TARGET}
 
 snippet redux-action-type
 alias rat
