@@ -1,256 +1,258 @@
 snippet f
 options word
-  function(${1:#:attribute}) {
-    ${0:TARGET}
-  }${2:}
+	function(${1:#:attribute}) {
+		${0:TARGET}
+	}${2:}
 
 snippet function
 alias   func
 options word
-  function ${1:function_name}(${2:#:arguments}) {
-    ${0:TARGET}
-  }
+	function ${1:function_name}(${2:#:arguments}) {
+		${0:TARGET}
+	}
 
 
 snippet =>
 options word
-  (${1:#:args}) => {
-    ${0:TARGET}
-  }
+	(${1:#:args}) => {
+		${0:TARGET}
+	}
 
 snippet =>)
 alias =>)
 options word
-  (${1:#:args}) => {
-    ${0:TARGET}
-  })
+	(${1:#:args}) => {
+		${0:TARGET}
+	})
 
 snippet :f
 options head
-  ${1:method_name}: function(${2:#:attribute}) {
-    ${0:TARGET}
-  },
+	${1:method_name}: function(${2:#:attribute}) {
+		${0:TARGET}
+	},
 
 snippet of
 abbr object function
 options head
-  ${1:method_name}(${2:#:attribute}) {
-    ${0:TARGET}
-  },
+	${1:method_name}(${2:#:attribute}) {
+		${0:TARGET}
+	},
 
 snippet cf
 abbr es6 class function
 options head
-  ${1:method_name}(${2:#:attribute}) {
-    ${0:TARGET}
-  }
+	${1:method_name}(${2:#:attribute}) {
+		${0:TARGET}
+	}
 
 snippet f)
 alias f)
 options word
-  function(${1:#:attribute}) {
-    ${0:TARGET}
-  })
+	function(${1:#:attribute}) {
+		${0:TARGET}
+	})
 
 snippet o
 options word
-  {
-    ${0:TARGET}
-  }${1:}
+	{
+		${0:TARGET}
+	}${1:}
 
 snippet :o
 options head
-  ${1:method_name}: {
-    ${0:TARGET}
-  },
+	${1:method_name}: {
+		${0:TARGET}
+	},
 
 snippet o)
 alias o)
 options word
-  {
-    ${0:TARGET}
-  })
+	{
+		${0:TARGET}
+	})
 
 snippet key-value
 alias :
 options word
-  ${1:key}: ${0:value},
+	${1:key}: ${0:value},
 
 snippet a
 options word
-  [
-    ${0:TARGET}
-  ]${1:}
+	[
+		${0:TARGET}
+	]${1:}
 
 snippet :a
 options head
-  ${1:method_name}: [
-    ${0:TARGET}
-  ],
+	${1:method_name}: [
+		${0:TARGET}
+	],
 
 snippet a)
 alias a)
 options word
-  [
-    ${0:TARGET}
-  ])
+	[
+		${0:TARGET}
+	])
 
 snippet switch
 alias sw
-options word
-  switch (${1}) {
-    ${0:TARGET}
-  }
+options indent
+	switch (${1}) {
+		${0:TARGET}
+	}
 
 snippet switchd-default
 alias sd
-options word
-  switch (${1:action.type}) {
-    ${0:TARGET}
-    default:
-      ${2:return state}
-  }
+options indent
+	switch (${1:action.type}) {
+		${0:TARGET}
+		default:
+			${2:return state}
+	}
 
 snippet case
 alias ca
 options word
-  case ${1}:
-    ${0:TARGET}
+	case ${1}:
+		${0:TARGET}
 
 snippet case-break
 alias cb
 options word
-  case ${1}:
-    ${0:TARGET}
-    break
+	case ${1}:
+		${0:TARGET}
+		break
 
 snippet proto
 options head
-  ${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
-    ${0:TARGET}
-  }
+	${1:class_name}.prototype.${2:method_name} = function(${3:#:arguments}) {
+		${0:TARGET}
+	}
 
 snippet if
 options head
-  if (${1:true}) {
-    ${0:TARGET}
-  }
+	if (${1:true}) {
+		${0:TARGET}
+	}
 
 snippet if-else
 alias ife
 options head
-  if (${1:true}) {
-    ${0:TARGET}
-  } else {
-  }
+	if (${1:true}) {
+		${0:TARGET}
+	} else {
+	}
 
 snippet for
 options head
-  for (let ${1:i} = 0; $1 < ${2:#:Things}.length; ++$1) {
-    ${0:TARGET}
-  }
+	for (let ${1:i} = 0; $1 < ${2:#:Things}.length; ++$1) {
+		${0:TARGET}
+	}
 
 snippet forin
 options head
-  for (var ${1:i} in ${2:#:Things}) {
-    ${0:TARGET}
-  }
+	for (var ${1:i} in ${2:#:Things}) {
+		${0:TARGET}
+	}
 
 snippet setTimeout-function
 alias setTo
 options head
-  setTimeout(function() {
-    ${0}
-  }, ${1:10})
+	setTimeout(function() {
+		${0}
+	}, ${1:10})
 
 snippet console-log
 alias cl
 options head
-  console.log(${0:TARGET})
+	console.log(${0:TARGET})
 
 snippet console-error
 alias ce
 options head
-  console.error(${0:TARGET})
+	console.error(${0:TARGET})
 
 snippet console-log'
 alias cl'
 options head
-  console.log('${0:TARGET}')
+	console.log('${0:TARGET}')
 
 snippet class
 options word
-  class ${1:class_name} {
-    constructor(${2:#:arguments}) {
-      ${0:TARGET}
-    }
-  }
+	class ${1:class_name} {
+		constructor(${2:#:arguments}) {
+			${0:TARGET}
+		}
+	}
 
 snippet classextend
 options word
-  class ${1:class_name} extends ${2:base_class} {
-    constructor(${3:#:arguments}) {
-      ${0:TARGET}
-    }
-  }
+	class ${1:class_name} extends ${2:base_class} {
+		constructor(${3:#:arguments}) {
+			${0:TARGET}
+		}
+	}
 
 snippet react-class
 alias rc
 options head
-  export default class ${1:class_name} extends React.Component {
-    constructor(props) {
-      super(props)
-    }
-    render() {
-      ${0:TARGET}
-    }
-  }
+	export default class ${1:class_name} extends React.Component {
+		constructor(props) {
+			super(props)
+		}
+		render() {
+			${0:TARGET}
+		}
+	}
 
 snippet react-class-extend
 alias rce
 options head
-  class ${1:class_name} extends ${2:React.Component} {
-    constructor(props) {
-      super(props)
-    }
-    render() {
-      return (
-        ${0:TARGET}
-      )
-    }
-  }
+	class ${1:class_name} extends ${2:React.Component:base_class} {
+		constructor(props) {
+			super(props)
+		}
+		render() {
+			return (
+				${0:TARGET}
+			)
+		}
+	}
 
-  export default $1
+	export default $1
 
 snippet import
 alias im
 options word
-  import ${1} from '${2:$1}'
+	import ${1} from '${3:#:prefix}${2:$1}'${0}
 
 snippet create-react-class
 alias crc
 options word
-  const ${1} = React.createClass({
-    render() {
-      return (
-        ${0:TARGET}
-      )
-    },
-  })
+	const ${1} = React.createClass({
+		render() {
+			return (
+				${0:TARGET}
+			)
+		},
+	})
 
-  export default $1
+	export default $1
 
 snippet react-prop-types
 alias rpt
 options word
-  React.PropTypes.${1:type},${0:TARGET}
+	React.PropTypes.${1:type},${0:TARGET}
 
 snippet :react-prop-types
 alias :rpt
 options word
-  ${1:propName}: React.PropTypes.${2:type},${0:TARGET}
+	${1:propName}: React.PropTypes.${2:type},${0:TARGET}
 
 snippet redux-action-type
 alias rat
 options word
-  export const ${1} = '$1'
+	export const ${1} = '$1'
+
+# vim: set noexpandtab :
