@@ -152,8 +152,10 @@ options head
 
 snippet forin
 options head
-	for (var ${1:i} in ${2:#:Things}) {
-		${0:TARGET}
+	for (let ${1:i} in ${2:#:Things}) {
+		if ($2.hasOwnProperty($1)) {
+			${0:TARGET}
+		}
 	}
 
 snippet setTimeout-function
@@ -197,9 +199,11 @@ options word
 snippet react-class
 alias rc
 options head
-	default class ${1:class_name} extends React.Component {
+	class ${1:class_name} extends React.Component {
 		render() {
-			${0:TARGET}
+			return (
+				${0:TARGET}
+			)
 		}
 	}
 
