@@ -197,22 +197,18 @@ options word
 snippet react-class
 alias rc
 options head
-	export default class ${1:class_name} extends React.Component {
-		constructor(props) {
-			super(props)
-		}
+	default class ${1:class_name} extends React.Component {
 		render() {
 			${0:TARGET}
 		}
 	}
 
+	export default $1
+
 snippet react-class-extend
 alias rce
 options head
-	class ${1:class_name} extends ${2:React.Component:base_class} {
-		constructor(props) {
-			super(props)
-		}
+	class ${1:class_name} extends ${2:React.Component} {
 		render() {
 			return (
 				${0:TARGET}
