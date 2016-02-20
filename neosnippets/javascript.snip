@@ -239,12 +239,12 @@ options word
 snippet react-prop-types
 alias rpt
 options word
-	React.PropTypes.${1:type},${0:TARGET}
+	React.PropTypes.${1:type},${0}
 
 snippet :react-prop-types
-alias :rpt
+alias rpt:
 options word
-	${1:propName}: React.PropTypes.${2:type},${0:TARGET}
+	${1:propName}: React.PropTypes.${2:type},${0}
 
 snippet redux-action-type
 alias rat
