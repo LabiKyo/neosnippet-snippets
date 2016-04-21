@@ -225,7 +225,12 @@ options head
 snippet import
 alias im
 options word
-	import ${1} from '${3:#:prefix}${2:$1}'${0}
+	import ${1} from '${2:$1}'
+
+snippet importObject
+alias imo
+options word
+	import { ${1} } from '${2}'
 
 snippet create-react-class
 alias crc
