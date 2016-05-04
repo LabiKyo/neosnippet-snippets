@@ -11,6 +11,12 @@ options word
 		${0:TARGET}
 	}
 
+snippet function*
+alias f* func*
+options word
+	function* ${1:function_name}(${2:#:arguments}) {
+		${0:TARGET}
+ }
 
 snippet =>
 options word
@@ -19,7 +25,6 @@ options word
 	}
 
 snippet =>)
-alias =>)
 options word
 	(${1:#:args}) => {
 		${0:TARGET}
